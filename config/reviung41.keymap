@@ -16,7 +16,7 @@
     flavor = "tap-preferred";
 };
 &led_strip {
-    chain-length = <10>;
+    chain-length = <11>;
 };
 / {
     combos {
@@ -35,6 +35,15 @@
         gui {
             bindings = <&kp LEFT_GUI>;
             key-positions = <36 37>;
+        };
+    };
+
+    macros {
+        back: back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_GUI &kp LEFT_BRACKET>;
+            label = "BACK";
         };
     };
 
@@ -64,10 +73,10 @@
             //                       |     |     | RET | ADJ |     |
 
             bindings = <
-&kp GRAVE     &kp NUMBER_1    &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5             &kp NUMBER_6   &kp N7            &kp N8             &kp N9        &kp N0     &kp KP_DIVIDE
-&kp ENTER     &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LEFT_GUI  &kp TAB       &kp MINUS          &kp BACKSPACE  &kp LEFT_ARROW    &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT  &kp ENTER
-&kp LEFT_ALT  &kp KP_DOT      &kp N7        &kp N8        &kp N9        &kp N0             &kp DELETE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp EQUAL     &kp MINUS  &kp ASTRK
-                                            &trans        &trans                   &trans                 &trans            &trans
+&kp GRAVE     &kp NUMBER_1    &kp NUMBER_2      &kp NUMBER_3  &kp NUMBER_4   &kp N5           &kp NUMBER_6   &kp N7            &kp N8             &kp N9        &kp N0     &kp KP_DIVIDE
+&kp ENTER     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_ALT   &kp TAB          &kp BACKSPACE  &kp LEFT_ARROW    &kp DOWN_ARROW     &kp UP_ARROW  &kp RIGHT  &kp ENTER
+&kp LEFT_ALT  &kp KP_DOT      &kp N7            &kp K_BACK    &kp K_FORWARD  &kp N0           &kp DELETE     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp EQUAL     &kp MINUS  &kp ASTRK
+                                                &trans        &trans                  &trans                 &trans            &trans
             >;
         };
 
